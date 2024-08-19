@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    class instrumentoMusical {
+    constructor(nome, tipo){
+        this.nome = nome;
+        this.tipo = tipo;
+    }
+
+Tocar() {
+    console.log(`Tocando o instrumento musical ${this.nome}`)
+}
+
+}
+class Violão extends instrumentoMusical {
+    constructor(nome, tipo, numCordas){
+        super(nome, tipo);
+        this.numCordas = numCordas;
+    }
+    Tocar() {
+        return(`Tocando o  violão ${this.nome} com ${ths.numCordas} cordas`);
+    }
+}
+class Teclado extends instrumentoMusical{
+    constructor(nome, tipo, numTeclas){
+        super(nome, tipo);
+        this.numTeclas = numTeclas;
+    }
+    Tocar() {
+        return(`Tocando o  Teclado ${this.nome} com ${ths.numTeclas} cordas`);
+    }
+}
+const violao = new Violão("Classico", "Corda", 8);
+const teclado = new Teclado("MaxPianos", "percuesão", 25);
+
+console.log(`Subclasse: Violão, Nome: ${violao.nome}, Tipo: ${violao.tipo}, Som: ${violao.numCordas}`)
+console.log(`Subclasse: Teclado, Nome: ${teclado.nome}, Tipo: ${teclado.tipo}, Som: ${teclado.numTeclas}`)
+violao.Tocar(); 
+teclado.Tocar();
+    </script>
+</body>
+</html>

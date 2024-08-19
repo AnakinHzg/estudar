@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Funcionario{
+            constructor(nome, salarioBase){
+                this.nome = nome;
+                this.salarioBase = salarioBase;
+            }
+        calcularSalario(){
+            return this.salarioBase;
+        }
+        }
+        class Gerente extends Funcionario{
+            constructor(nome, salarioBase, bonusGerente){
+                super(nome, salarioBase);
+                this.bonusGerente = bonusGerente;
+            }
+            calcularSalario(){
+                return this.salarioBase + this.bonusGerente;
+            }
+        }
+        class Desenvolvedor extends Funcionario{
+            constructor(nome, salarioBase, projetosCompletos){
+                super(nome, salarioBase);
+                this.projetosCompletos = projetosCompletos;
+            }
+            calcularSalario(){
+                return this.salarioBase + (this.projetosCompletos * 500);
+            }
+        }
+        const salarioDev = new Desenvolvedor("fernando", 1000, 1)
+        console.log(`Sunbclasse: Funcionário, Nome: ${salarioDev.nome}, Salario Base: ${salarioDev.salarioBase}, Projetos Completos: ${salarioDev.projetosCompletos}, Total: ${salarioDev.calcularSalario()}`)
+    </script>
+</body>
+</html>

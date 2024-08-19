@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Veiculo{
+            constructor(marca, modelo, consumoBase){
+                this.marca = marca;
+                this.modelo = modelo;
+                this.consumoBase = consumoBase;
+            }
+
+        }
+        class Carro extends Veiculo{
+            constructor(marca, modelo, consumoBase, numeroDePortas){
+                super(marca, modelo, consumoBase,);
+                this.numeroDePortas = numeroDePortas;
+            }
+            calcularEficiencia(){
+                return this.consumoBase - 5;
+            }
+        }
+        class Caminhao extends Veiculo{
+            constructor(marca, modelo, consumoBase, capacidadeCarga){
+                super(marca, modelo, consumoBase);
+                this.capacidadeCarga = capacidadeCarga;
+            }
+            calcularEficiencia(){
+                return this.consumoBase - 10;
+            }
+        }       
+        const eCarro = new Carro("Honda", "Civic", 15, 4);
+        const eCaminhao  =new Caminhao("Mercedes", "xx1", 7, 4);
+
+        console.log(`Subclasse: marca: ${eCarro.marca}, Modelo: ${eCarro.modelo}, Consumo: ${eCarro.consumoBase}, Numero de Portas: ${eCarro.numeroDePortas}`)
+        console.log(`Subclasse: marca: ${eCaminhao.marca}, Modelo: ${eCaminhao.modelo}, Consumo: ${eCaminhao.consumoBase}, Numero de Portas: ${eCaminhao.numeroDePortas}`)
+
+            
+        
+    </script>   
+</body>
+</html>

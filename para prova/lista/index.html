@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+class Carta{
+    constructor(naipe, valor){
+        this.naipe = naipe;
+        this.valor = valor;
+    }
+
+mostrarInfo() {
+    console.log(`Tocando o instrumento musical ${this.nome}`)
+}
+
+}
+class CartaEspecial extends Carta {
+    constructor(naipe, valor, efeitoEspecial){
+        super(naipe, valor);
+        this.efeitoEspecial = efeitoEspecial;
+    }
+    mostrarInfo() {
+        return(`${this.naipe}, ${this.valor}, ${this.efeitoEspecial}`);
+    }
+}
+
+const carta1 = new Carta("zap", 8);
+const carta2 = new CartaEspecial("zap", 8, "rei");
+
+console.log(`Subclasse: Carta, Naipe: ${carta1.naipe}, Valor: ${carta1.valor}`)
+console.log(`Sunclasse: Carta Especial: ${carta2.efeitoEspecial}`)
+violao.Tocar(); 
+teclado.Tocar();
+    </script>
+</body>
+</html>

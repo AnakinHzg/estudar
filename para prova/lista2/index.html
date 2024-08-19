@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Veiculo{
+            constructor(marca, modelo){
+                this.marca = marca;
+                this.modelo = modelo;
+            }
+            exibirDetelhes(){
+                return(`A marac do veículo é${this.maraca}, e o modelo é${this.modelo}`)
+            }
+        
+        }
+        class Carro extends Veiculo{
+            constructor(marca, modelo, numPortas){
+                super(marca, modelo)
+                this.numPortas = numPortas;
+            }
+        exibirDetelhes(){
+            console.log(`a marca do carro é ${this.marca}, modelo:${this.modelo}, o numero de portas é:${this.numPortas}`)
+        }
+        }
+        const ve1 = new Veiculo("honda", "civic");
+        const ve2  = new Carro("Toyota", "corolla", 4)
+
+        console.log(`O carro é um : ${ve1.marca}, ${ve1.modelo}`)
+        console.log(`O carro é um : ${ve2.marca}, ${ve2.modelo}, com ${ve2.numPortas}`)
+
+    </script>
+</body>
+</html>

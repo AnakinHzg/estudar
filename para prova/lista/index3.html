@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Funcionario{
+            constructor(nome, salarioBase){
+                this.nome = nome;
+                this.salarioBase = salarioBase;
+            }
+        calcularSalario(){
+            return(2000)
+        }
+        mostrarinfo(){
+            console.log(`O Funcionário: ${this.nome}, recebe:${this.salarioBase}`)
+        }
+        }
+
+        class Junior extends Funcionario{
+            constructor(nome, salarioBase, avaliacaoDesempenho){
+                super(nome, salarioBase)
+                this.avaliacaoDesempenho = avaliacaoDesempenho;
+            }
+        calcularSalario(){
+            if(this.avaliacaoDesempenho = "Bom"){
+                return(this.salarioBase + (10 * this.salarioBase / 100))
+            }
+            else if(this.avaliacaoDesempenho = "Regular"){
+                return(this.salarioBase + (5 * (this.salarioBase / 100)))
+            }
+            else if(this.avaliacaoDesempenho = "Insatistafório"){
+                return(`O Funcionário não tem acesso ao bonus!`)
+            }
+            else{
+                return(`DETERMINE A AVALIAÇÃO DE DESEMPENHO!!`)
+            }
+        }
+        }
+
+        class Senior extends Funcionario{
+            constructor(nome, salarioBase, projCon){
+                super(nome, salarioBase)
+                this.projCon = projCon;
+            }
+            calcularSalario(){
+                if(this.projCon >= 10) {
+                    return(this.salarioBase + (20 * this.projCon / 100))
+                }
+                else if (this.projCon >= 5 && this.projCon <= 9){
+                    return(this.salarioBase + (10 * this.salarioBase / 100))
+                }
+                else if(this.projCon < 5){
+                    return(this.salarioBase + (5 * this.projCon))
+                }
+                else{
+                    return(`DETERMINE A QUANTIDADE DE PROJETOS CONSLUÍDOS!!`)
+                }
+            }
+        }
+        const func1 = new Junior("Fernando", 2000, "Bom");
+        const func2 = new Senior("jhony deep", 2000, 10)
+
+        console.log(`Nome: ${func1.nome}, com o salario base de: ${func1.salarioBase}, tem como avaliacão de desempenho:${func1.avaliacaoDesempenho} total a receber:${func1.calcularSalario()} `)
+        console.log(`Nome: ${func2.nome}, com o salario base de: ${func2.salarioBase}, tem:${func2.projCon} projetos concluídos, total a receber:${func2.calcularSalario()} `)
+
+
+
+    </script>
+</body>
+</html>

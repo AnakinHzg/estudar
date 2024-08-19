@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Produto{
+            constructor(nome, precoBase){
+                this.nome = nome;
+                this.precoBase = precoBase;
+            }
+        calcularPreco(){
+            return(100)
+        }
+        mostrarInfo() {
+            console.log(`o ${this.nome}, vale: ${this.precoBase}`)
+        }
+        }
+
+        class produtoFisico extends Produto{
+            constructor(nome, precoBase, peso) {
+                super(nome, precoBase)
+                this.peso = peso;
+            }
+        calcularPreco() {
+            if(this.peso <= 1) {
+                return(10)
+            }
+            else if(this.peso >= 1 && this.peso <= 5){
+                return(20)
+            }
+            else if(this. peso > 5){
+                return(30)
+            }
+            else{
+                return(`DETERMINE O PESO!!`)
+            }
+        }
+        }
+        
+
+        class produtoDigital extends Produto{
+            constructor(nome, precoBase, tamArq){
+                super(nome, precoBase)
+                this.tamArq = tamArq;
+            }
+        calcularPreco() {
+            if(this.tamArq <= 100) {
+                return( `PRODUTO NÃO POSSUI DESCONTO!!`)
+            }
+            else if(this.tamArq <= 100 && this.tamArq <= 1000 ){
+                return(this.precoBase - (this.precoBase * 5 / 100))
+            }
+            else if( this.tamArq > 1000 ){
+                return(this.precoBase - (this.precoBase * 10 / 100))
+            }
+        }
+        }
+        const pro1  = new produtoFisico("tenis", 100, 1)
+        const pro2 = new produtoDigital("planilha", 200, 1200)
+
+        console.log(`NOME:${pro1.nome}, preco:${pro1.precoBase}, peso de:${pro1.peso}kg, preco final:${pro1.calcularPreco()}`)
+        console.log(`NOME:${pro2.nome}, preco:${pro2.precoBase}, tamanho de :${pro2.tamArq}, preco final:${pro2.calcularPreco()}`)
+
+    </script>
+</body>
+</html>

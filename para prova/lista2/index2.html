@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Atleta{
+            constructor(nome, salarioBase){
+                this.nome = nome;
+                this.salarioBase = salarioBase;
+            }
+        calcularSalario(){
+            return(2000)
+        }
+        mostrarInfo(){
+            console.log(`Ò atleta: ${this.nome}, recebe:${this.salarioBase}`)
+        }
+        }
+
+        class Jogador extends Atleta{
+            constructor(nome, salarioBase, numGols){
+                super(nome, salarioBase)
+                this.numGols = numGols;
+            }
+        calcularSalario(){
+            return(this.salarioBase + (this.numGols * 1000))
+        }
+        }
+
+        class Tecnico extends Atleta{
+            constructor(nome, salarioBase, numVit){
+                super(nome, salarioBase)
+                this.numVit = numVit;
+            }
+        calcularSalario(){
+            return(this.salarioBase + (this.numVit * 5000))
+        }
+        }
+
+        const ate1 = new Jogador("Pelé", 2000, 5)
+        const ate2 = new Tecnico("Abel Ferreira", 2000, 10)
+
+        console.log(`nome: ${ate1.nome}, salario base:${ate1.salarioBase}, numero de gols:${ate1.numGols}, total a receber de:${ate1.calcularSalario()}`)
+        console.log(`nome: ${ate2.nome}, salario base:${ate2.salarioBase}, numero de gols:${ate2.numVit}, total a receber de:${ate2.calcularSalario()}`)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Programador{
+            constructor(nome, salarioBase){
+                this.nome = nome;
+                this.salarioBase = salarioBase;
+            }
+        calcularSalario(){
+            return(1500)
+        }
+
+        mostrarInfo(){
+            console.log(`O salario base é 1500`)
+        }
+        }
+        
+        class Pleno extends Programador{
+            constructor(nome, salarioBase, ProjCon){
+                super(nome, salarioBase)
+                this.ProjCon = ProjCon;
+            }   
+            calcularSalario(){
+                return(this.salarioBase + (this.ProjCon * 0.5))
+            }
+        }
+
+        class Senior extends Programador{
+            constructor(nome, salarioBase, ProjCon){
+                super(nome, salarioBase)
+                this.ProjCon = ProjCon;
+            }
+        calcularSalario(){
+            return(this.salarioBase + (this.ProjCon * 0.7))
+        }   
+        }
+        const prog1 = new Pleno("fernando", 1500, 5)
+        const prog2 = new Senior("fernando", 1500, 3)
+        console.log(`O programador Pleno: ${prog1.nome}, teve de salario base:${prog1.salarioBase}, com :${prog1.ProjCon} projetos concluidos, ${prog1.calcularSalario()} `)
+        console.log(`O programador senior: ${prog2.nome}, teve de salario base:${prog2.salarioBase}, com:${prog2.ProjCon} projetos concluidos, ${prog2.calcularSalario()} `)
+
+
+    </script>
+</body>
+</html>
